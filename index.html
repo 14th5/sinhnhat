@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Món Quà Nhỏ">
+    <link rel="apple-touch-icon" href="assets/images/icons/couple.png">
+    <link rel="icon" type="image/png" href="assets/images/icons/couple.png">
+    <meta name="theme-color" content="#1b0a1c">
+    <title>Món Quà Nhỏ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Dancing+Script:wght@400;500;600;700&family=Pacifico&display=swap">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/start.css">
+    <link rel="stylesheet" href="css/sphere.css">
+    <link rel="stylesheet" href="css/letter.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/",
+          "simplex-noise": "https://cdn.skypack.dev/simplex-noise@4.0.1"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <span>Đang tải...</span>
+        <div id="progress-container">
+             <div id="progress"></div>
+        </div>
+    </div>
+
+    <div id="ui">
+        <div id="info"></div>
+    </div>
+
+    <div id="start-wrap">
+        <div id="start-label">Giữ để bắt đầu</div>
+        <svg viewBox="0 0 68 68">
+            <circle class="ring-pulse" cx="34" cy="34" r="28"/>
+            <circle class="ring-track" cx="34" cy="34" r="26"/>
+            <circle class="ring-fill" id="ring-fill" cx="34" cy="34" r="26"/>
+        </svg>
+    </div>
+
+    <div id="transition-overlay"></div>
+    <div id="sphere-click-hint" aria-hidden="true">Click vào nhé</div>
+    <button type="button" id="btn-flying-corner" aria-label="Ảnh bay lên">💌</button>
+    <div id="sphere-particles-bg"></div>
+
+    <div id="cupid-letter-overlay">
+        <div class="cupid-space"></div>
+        <img id="cupid-flying-img" src="assets/images/letters/phongbi.png" alt="Cupid" />
+        <img id="letter-envelope-img" src="assets/images/letters/khongcanh.png" alt="Phong bì" />
+        <div id="cupid-letter-frame">
+            <div class="letter-butterfly-left"><img src="assets/buomtrai.png" alt="" /></div>
+            <div class="letter-butterfly-right"><img src="assets/buomphai.png" alt="" /></div>
+            <div class="letter-bottom-bg"></div>
+            <div class="letter-content"></div>
+            <div class="letter-image-wrap" id="letterImageWrap" style="display:none">
+                <img class="letter-inline-image" id="letterInlineImage" src="" alt="">
+                <span class="letter-image-caption">♥</span>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="webglCanvas"></canvas>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
